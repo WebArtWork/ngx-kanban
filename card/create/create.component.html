@@ -1,0 +1,8 @@
+<span class="trello-item__cross" (click)="create = true; focus();" *ngIf="!create">Create task</span>
+<form (ngSubmit)="create_task.emit(name); name=''; create=false;" *ngIf="create" class="trello-task__form">
+	<label class="trello-task__label">
+		<input type="text" [(ngModel)]="name" name="name" placeholder="Name of task" #el_text>
+	</label>
+	<button class="trello-task__btn" [disabled]="!name">Add task</button>
+	<button class="trello-task__close" type="button" (click)="create = false;">X</button>
+</form>

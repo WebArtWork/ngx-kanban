@@ -1,0 +1,276 @@
+drag-scroll {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	.drag-scroll-content{
+		display: flex !important;
+		width: 100% !important;
+		height: 100% !important;
+	}
+}
+
+
+/* in-flight clone */
+.gu-mirror {
+	position: fixed !important;
+	margin: 0 !important;
+	z-index: 9999 !important;
+	opacity: 0.8;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	filter: alpha(opacity=80);
+	pointer-events: none;
+}
+/* high-performance display:none; helper */
+.gu-hide {
+	left: -9999px !important;
+}
+/* added to mirrorContainer (default = body) while dragging */
+.gu-unselectable {
+	-webkit-user-select: none !important;
+	-moz-user-select: none !important;
+	-ms-user-select: none !important;
+	user-select: none !important;
+}
+/* added to the source element while its mirror is dragged */
+.gu-transit {
+	opacity: 0.2;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+	filter: alpha(opacity=20);
+}
+
+.trello{
+	&-wrap{
+
+		display: flex;
+		flex-flow: row wrap;
+
+	}
+	&-item{
+		flex: 0 0 300px;
+		max-width: 300px;
+		padding: 0 5px;
+
+
+		&-content{
+			background: #0000008a;
+			border-radius: 8px;
+			color: #fff;
+			padding: 10px 12px;
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 5px;
+			align-items: center;
+			input{
+			}
+			&__title{
+				width: 100%;
+				word-break: break-word;
+				padding-right: 10px;
+				cursor: pointer;
+				transition: all .3s;
+				&:hover{
+					color: #e5e55c;
+				}
+			}
+			&__btn{
+
+				max-width: 60px;
+				width: 100%;
+				button{
+					
+					width: 100%;
+					background: #e5e55c;
+					border: none;
+					padding: 10px;
+					border-radius: 20px;
+					transition: all 0.3s;
+					&:hover{
+						box-shadow: 0 0 5px #e5e55c;
+					}
+				}
+			}
+		}
+		&__btn{
+			
+			background: #fff;
+			border:none;
+			padding:5px;
+			border-radius: 20px;
+			transition: all .3s;
+			max-width: 70px;
+			width: 100%;
+			&:hover{
+				box-shadow: 0 0 5px #f5f5f5;
+			}
+		}
+		&-wrap{
+			background: #1A1C25;
+			border: 1px solid #E5E55C;
+			padding: 20px;
+			border-radius: 16px;
+			position:relative;
+		}
+		&__label{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding-bottom: 10px;
+			h3{
+				color: #fff;
+				font-size: 18px;
+				margin-bottom: 0;
+				text-align: left;
+				width: 100%;
+				padding-right: 30px;
+				word-break: break-all;
+				white-space: break-spaces;
+			}
+		}
+		&__cross{
+			display: none;
+		}   
+	}
+	&-form{
+
+		&__label{
+
+			input{
+				
+				margin: 10px 10px 10px 14px;
+				padding: 9px 12px 10px 15px;
+				border-radius: 8px;
+				border: 1px solid #fff;
+				background: #0c0d11;
+				color: #fff;
+
+				&::placeholder{
+					color:#e5e55c;
+				}
+			}
+		}
+		button{			
+
+			background: #e5e55c;
+			border: none;
+			border-radius: 25px;
+			max-width: 100px;
+			padding: 5px 0 ;
+			transition: all 0.3s;
+			font-size: 15px;
+			&:hover{
+				box-shadow: 0 0 3px 0px #e5e55c;
+			}
+		}
+
+	}
+	&__label{
+		height: fit-content;
+		width: 100%;
+		flex: 0 0 150px;
+		background: #1A1C25;
+		border: 1px solid #e5e55c;
+		color: #FFF;
+		text-align: center;
+		padding: 10px 0;
+		border-radius: 20px;
+		cursor: pointer;
+		transition: all .3s;
+		&:hover{
+			background: #e5e55c;
+			color: #000;
+		}
+	}
+}
+.trello-content-wrap{
+
+	margin-top: 10px;
+	max-height: calc(100vh - 270px);
+	overflow: auto;
+}
+.trello__label{
+	margin-left:5px;
+}
+.kanban-component {
+	display: flex ;
+	margin: 5px 0px 0px 5px
+}
+.trello-form {
+	align-items: center;
+	max-width: 450px;
+	border: solid 1px #e5e55c;
+	border-radius: 15px;
+	background-color: #1A1C25;
+	margin-left : 5px;
+	height: 121px;
+
+}
+.trello-form__label{
+
+	padding-top: 10px;
+	margin-top: 10px;
+	margin:10px 8px 10px 10px;
+}
+.trello-item__label h3 {
+	text-align: center;
+}
+
+.trello-task__label{
+	margin-bottom: 30;
+}
+
+.trell-buton-block{
+	width: 100%;
+	margin-top:5px;
+	transform: translate(65%);
+}
+.trello-form{
+	height: 175px;
+}
+.Creat-column{
+	color: white;
+}
+.rello-content-wrap{
+	button{
+		margin-bottom: 50px;
+		padding-bottom: 50px;
+	}
+}
+.trell-form-close{
+	font-family: "Roboto", sans-serif;
+	font-size: 0;
+	color: black;
+	margin-left: 190px;
+	padding: 0 ;
+	position: absolute;
+	top: 81px;
+	transform: translateY(-50%);
+	border-radius: 50%;
+	border: none;
+	background: #e5e55c;
+	
+	display: flex;
+	justify-content: center;
+	width: 25px;
+	height: 25px;
+	transition: all 0.3s;
+	&::before{
+	        content: "";
+		    position: absolute;
+		    width: 55%;
+		    height: 2px;
+		    background: black;
+		    left: 50%;
+		    top: 50%;
+		    transform: translate(-50%, -50%) rotate(45deg);
+	    }
+	    &::after{
+			content: "";
+		    position: absolute;
+		    width: 55%;
+		    height: 2px;
+		    background: black;
+		    left: 50%;
+		    top: 50%;
+		    transform: translate(-50%, -50%) rotate(-45deg);
+	    }
+}

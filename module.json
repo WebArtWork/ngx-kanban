@@ -1,0 +1,7 @@
+{
+	"repo": "git@github.com:WebArtWork/kanban.git",
+	"dependencies": {
+		"ngx-drag-scroll": "8.0.0-beta.2",
+		"ng2-dragula": "2.1.1"
+	}
+}

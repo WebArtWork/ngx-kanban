@@ -1,0 +1,91 @@
+.trello-item__cross{
+    display: block;
+    width: 100%;
+    padding: 5px 12px;
+    border-radius: 8px;
+    background: #e5e55c;
+    color: #000;
+    cursor: pointer;
+    text-align: center;
+    transition: all .3s;
+    margin-top: 10px;
+
+    &:hover{
+    	box-shadow: 0 0 8px 0px #e5e55c8c; 
+    }
+}
+.trello-task{
+	&__form{
+		position: relative;
+		text-align: center;
+		margin-top: 10px;
+	}
+	&__label{
+		input{
+			width: 100%;
+		    padding: 9px 12px;
+		    border-radius: 8px;
+		    border: 1px solid #fff;
+		    background: #0c0d11;
+		    color: #fff;
+		    margin-bottom: 5px;
+		    &::placeholder{
+		    	color: #e5e55c;
+		    }
+		}
+	}
+	&__btn{
+		
+		background: #e5e55c;
+	    border: none;
+	    border-radius: 25px;
+	    max-width: 100px;
+	    width: 100%;
+	    padding: 5px 0;
+	    transition: all .3s;
+	    display:block;
+	    margin: 10px auto;
+	    margin-bottom: 0px;
+	    &:hover{
+			box-shadow: 0 0 5px #e5e55c;
+		}
+	}
+	&__close{
+		position: absolute;
+	    top: 0;
+	    transform: translateY(-50%);
+	    right: -10px;
+	    border-radius: 50%;
+	    border: none;
+	    background: #e5e55c;
+	    font-size: 0;
+	    display: flex;
+	    justify-content: center;
+	    width: 26px;
+	    height: 26px;
+	    transition: all .3s;
+	    &::before{
+	        content: "";
+		    position: absolute;
+		    width: 55%;
+		    height: 2px;
+		    background: black;
+		    left: 50%;
+		    top: 50%;
+		    transform: translate(-50%, -50%) rotate(45deg);
+	    }
+	    &::after{
+			content: "";
+		    position: absolute;
+		    width: 55%;
+		    height: 2px;
+		    background: black;
+		    left: 50%;
+		    top: 50%;
+		    transform: translate(-50%, -50%) rotate(-45deg);
+	    }
+	    &:hover{
+			box-shadow: 0 0 5px #e5e55c;
+		}
+	}
+}

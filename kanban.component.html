@@ -1,0 +1,34 @@
+<drag-scroll>
+	<div class="kanban-component">
+		<div class="trello-item" *ngFor="let column of clmns;">
+			<div class="trello-item-wrap">
+				<label class="trello-item__label">
+					<h3>{{column.name}}</h3>
+					<input type="text" [(ngModel)]="column.name" (ngModelChange)="cs.update(column)">
+				</label>
+				<button class="btn-y" (click)="cs.delete(column);">Delete column</button>
+
+				<div style="min-height: 100px;" class="trello-content-wrap" dragula="tasks" [dragulaModel]="(board && tasks_in[column._id] || column.rows)	" (dragulaModelChange)="on_move(column, $event)">
+					<div *ngFor="let row of (board && tasks_in[column._id] || column.rows)" class="trello-item-content">
+						<div class="trello-item-content__title" (click)="open_task.emit(row)">{{row[label_task] || 'No Name'}}</div>
+					</div>
+				</div>
+				<card-create  (create_task)="((board && new_task.column=column._id) || new_task.column=column.name); new_task[label_task]=$event; create_task.emit(new_task); new_task={};"></card-create>
+			</div>
+		</div>
+
+		<ng-container *ngIf="board">
+			<label class="trello__label" *ngIf="!show_create_task" (click)="show_create_task=true; focus_create_column();">
+				<span>Create Column</span>
+			</label>
+			<form class="trello-form" *ngIf="show_create_task" (ngSubmit)="create_column(); show_create_task=false;">
+				<label class="trello-form__label">
+					<h3 class="Creat-column"> Create column</h3>
+					<input name="name" placeholder="Name of task" type="text" [(ngModel)]="name_create_column" #el_create_column>
+					<button class="trell-form-close" type="button" (click)="show_create_task = false;">X</button>
+				</label>
+				<button class="trell-buton-block" type="submit" [disabled]="!name_create_column">Create</button>
+			</form>
+		</ng-container>
+	</div>
+</drag-scroll>
